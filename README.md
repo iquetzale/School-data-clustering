@@ -1,2 +1,7 @@
 # School-data-clustering
 Code for me and my classmate's research paper that aims to cluster schools in Jakarta. 
+
+This repository contains 3 python notebooks along with the curated dataset and research paper:
+- school_data_processing(1) compiles csvs obtained through the Ministry of Education's 'Data Pokok Pendidikan' website (https://dapo.kemdikbud.go.id/) on 9th March 2023, specifically for DKI Jakarta province. The csvs for each Kecamatan were downloaded individually and compiled per city using Microsoft Excel resulting in 6 final csvs (Jakarta Barat, Timur, Selatan, Utara, Pusat, and Kepulauan Seribu). The 6 csvs would then be fed to this python notebook and then merged into one single csv which will serve as the basic dataset.
+- school_data_processing(2) takes the csv from school_data_processing(1) and adds accreditaion data based on each school's NPSN or ID. Accreditation data is obtained through the website of BANSM (National Accreditation Institution) at https://bansm.kemdikbud.go.id/. Individual school data was web scraped through adding the NPSN to the website url. Web scraping process is done with BeautifulSoup library in python. The final processed dataset which was used for clustering could be seen in "school_data.csv"
+- school_data_clustering would run the k-means and DBSCAN clustering algorithm along with further processing and encoding of the data. The methodologies and results of the clustering process can be read on research_paper.pdf.
